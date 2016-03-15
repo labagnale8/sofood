@@ -2,7 +2,7 @@ Meal.destroy_all
 User.destroy_all
 
 
-User.create!(email: 'sophie@hotmail.com', password: 'sophiesophie')
+User.create!(email: 'sophie@hotmail.com', password: 'sophiesophie', admin: true)
 User.create!(email: 'louis@hotmail.com', password: 'louislouis')
 User.create!(email: 'nicolas@hotmail.com', password: 'niconico')
 
