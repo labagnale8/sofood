@@ -15,7 +15,7 @@
     <p> Last name <%= @profile.last_name || "" %></p>
     <p> Phone Number <%= @profile.phone_number || "" %></p>
 
-    <%= link_to edit_user_profile_path(@profile.user, @profile), {class: "btn btn-primary form-btn "} do %>   <h4>Edit your profile </h4>
+    <%= link_to edit_profile_path, {class: "btn btn-primary form-btn "} do %>   <h4>Edit your profile </h4>
     <% end %>
   </div>
 </div>
