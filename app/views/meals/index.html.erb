@@ -1,6 +1,12 @@
 <h1>Hello World</h1>
 
+
+
 <% @daily_meals.each do |meal| %>
+<% if policy(meal).create? %>
+<%= link_to 'créer un nouveau plat',  new_user_meal_path(current_user)%>
+<%= link_to 'update le plat',  edit_user_meal_path(meal, current_user) %>
+<% end %>
   <p> <%= meal.name %></p>
   <p> <%= meal.price %></p>
   <p> <%= meal.description %></p>

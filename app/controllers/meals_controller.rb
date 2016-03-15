@@ -3,7 +3,7 @@ class MealsController < ApplicationController
   before_action :find_meal, only: [:show, :edit, :update]
 
   def index
-    @daily_meals = Meal.where(publication_date: Date.today).limit(10)
+    @daily_meals = policy_scope(Meal.where(publication_date: Date.today).limit(10))
   end
 
   def show
@@ -13,11 +13,13 @@ class MealsController < ApplicationController
 
   def new
     @meal = Meal.new
+    authorize @meal
   end
 
   def create
-    @user = current_user
     @meal = @user.meals.build(meal_params)
+    authorize @meal
+    @user = current_user
     if @meal.save
       redirect_to meals_path
     else
@@ -42,12 +44,13 @@ private
 
   def find_meal
     @meal = Meal.find(params[:id])
+    authorize @meal
   end
 
 
 
   def meal_params
-    params.require(:meal).permit(:name, :price, :description, :photo, :photo_cache, :available_quantity, :publication_date, :chief_id)
+    params.require(:meal).permit(:name, :price, :description, :photo, :photo_cache, :available_quantity, :publication_date, :chief_id, :user_id)
   end
 
 end
