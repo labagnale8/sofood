@@ -2,14 +2,17 @@ class ProfilesController < ApplicationController
   before_action :find_profile, only: [:show, :edit, :update]
 
   def show
+    authorize @profile
   end
 
   def edit
+    authorize @profile
   end
 
   def update
+    authorize @profile
     if @profile.update(profile_params)
-      redirect_to user_profile_path
+      redirect_to profile_path
     else
       render :edit
     end
