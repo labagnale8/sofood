@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160315092514) do
+ActiveRecord::Schema.define(version: 20160315102640) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(version: 20160315092514) do
     t.integer  "chief_id"
   end
 
-  add_index "meals", ["user_id"], name: "index_meals_on_user_id", using: :btree
   add_index "meals", ["chief_id"], name: "index_meals_on_chief_id", using: :btree
+  add_index "meals", ["user_id"], name: "index_meals_on_user_id", using: :btree
 
   create_table "order_lines", force: :cascade do |t|
     t.integer  "order_id"
@@ -101,8 +101,8 @@ ActiveRecord::Schema.define(version: 20160315092514) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "meals", "users"
   add_foreign_key "meals", "chiefs"
+  add_foreign_key "meals", "users"
   add_foreign_key "order_lines", "meals"
   add_foreign_key "order_lines", "orders"
   add_foreign_key "orders", "users"
