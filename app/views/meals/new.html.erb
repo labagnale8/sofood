@@ -1,0 +1,21 @@
+<h1>New controller MEAL</h1>
+
+
+<div class="text-center">
+
+  <h1>Create a new place</h1>
+
+  <div class="row padding-medium">
+    <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 new-place-form">
+      <%= simple_form_for [current_user, @meal] do |f| %>
+        <%= f.input :name%>
+        <%= f.input :price, as: :integer, placeholder: 'How many people can sleep there'%>
+        <%= f.input :photo %>
+        <%= f.input :available_quantity, as: :integer%>
+        <%= f.input :publication_date, as: :date%>
+
+        <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
