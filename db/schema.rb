@@ -1,6 +1,6 @@
 ActiveRecord::Schema.define(version: 20160315102640) do
 
-   enable_extension "plpgsql"
+  enable_extension "plpgsql"
 
   create_table "chiefs", force: :cascade do |t|
     t.string   "name"
@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(version: 20160315102640) do
     t.integer  "available_quantity"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.integer  "chief_id"
     t.date     "publication_date"
     t.integer  "user_id"
-    t.integer  "chief_id"
   end
 
   add_index "meals", ["chief_id"], name: "index_meals_on_chief_id", using: :btree
