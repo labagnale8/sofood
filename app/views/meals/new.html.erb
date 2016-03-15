@@ -9,7 +9,7 @@
     <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 new-place-form">
       <%= simple_form_for [current_user, @meal] do |f| %>
         <%= f.input :name%>
-        <%= f.input :price, as: :integer, placeholder: 'How many people can sleep there'%>
+        <%= f.input :price, as: :integergit %>
         <%= f.input :photo %>
         <%= f.input :available_quantity, as: :integer%>
         <%= f.input :publication_date, as: :date%>

@@ -6,12 +6,17 @@ class MealPolicy < ApplicationPolicy
   end
 
   def create?
-    if user ? user.admin : false
-    end
+    user_admin?
   end
 
   def update?
-     if user ? user.admin : false
-    end
+    user_admin?
   end
+
+  private
+
+  def user_admin?
+    user && user.admin
+  end
+
 end
