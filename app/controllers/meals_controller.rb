@@ -3,7 +3,8 @@ class MealsController < ApplicationController
   before_action :find_meal, only: [:show, :edit, :update]
 
   def index
-    @daily_meals = policy_scope(Meal.where(publication_date: Date.today).limit(10))
+    @daily_meals = policy_scope(Meal.where(publication_date: Date.today).limit(4))
+    @order_line = current_order.order_lines.new
   end
 
   def show

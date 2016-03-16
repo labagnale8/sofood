@@ -4,13 +4,11 @@ Rails.application.routes.draw do
 
   resource :profile, only: [:show, :edit, :update]
   resources :users do
-   #resources :profiles, only: [:show, :edit, :update]
-   resources :meals, only: [:new, :create, :edit, :update]
+    resources :meals, only: [:new, :create, :edit, :update]
   end
 
-  resources :meals, only: [:index, :show]
+  resources :meals, only: [:index]
+  resource :cart, only: [:show]
+  resources :order_lines, only: [:create, :update, :destroy]
 
 end
-
-
-
