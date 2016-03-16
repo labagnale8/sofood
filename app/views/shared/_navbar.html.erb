@@ -38,13 +38,18 @@
       <%= image_tag "logo_food.png", class: "img-circle  avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
 
       </div>
+
     </div>
+
+    <h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
 
     <% else %>
 
     <!-- Login text link -->
     <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <%= link_to t(".top_call_to_action", default: "Sign up"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+     <h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
     <% end %>
 
   </div>

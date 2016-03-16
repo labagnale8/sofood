@@ -5,24 +5,24 @@ class OrderLinePolicy < ApplicationPolicy
     end
   end
 
-  def show
+  def show?
     true
   end
 
 
-  def new
+  def new?
     true
   end
 
-  def create
+  def create?
     true
   end
 
-  def edit
+  def edit?
     true
   end
 
-  def update
+  def update?
     true
   end
 end
