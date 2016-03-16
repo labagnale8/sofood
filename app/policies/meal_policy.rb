@@ -5,6 +5,7 @@ class MealPolicy < ApplicationPolicy
     end
   end
 
+
   def create?
     user_admin?
   end

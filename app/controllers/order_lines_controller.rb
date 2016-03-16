@@ -2,6 +2,7 @@ class OrderLinesController < ApplicationController
   before_action :authenticate_user!, except: [:create, :update, :destroy]
 
   def create
+    p current_order
     @order = current_order
     @order_line = @order.order_lines.new(order_line_params)
     @order.save
