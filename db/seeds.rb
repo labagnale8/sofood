@@ -2,8 +2,6 @@ Meal.delete_all
 User.delete_all
 OrderStatus.delete_all
 
-
-
 User.create!(email: 'sophie@hotmail.com', password: 'sophiesophie', admin: true)
 User.create!(email: 'louis@hotmail.com', password: 'louislouis')
 User.create!(email: 'nicolas@hotmail.com', password: 'niconico')
@@ -21,3 +19,7 @@ OrderStatus.create! id: 1, name: "In Progress"
 OrderStatus.create! id: 2, name: "Placed"
 OrderStatus.create! id: 3, name: "Shipped"
 OrderStatus.create! id: 4, name: "Cancelled"
+
+
+
+
