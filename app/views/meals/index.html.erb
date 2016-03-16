@@ -1,20 +1,17 @@
 <h1>Hello World</h1>
 
 
-
-<% @daily_meals.each do |meal| %>
-<% if policy(meal).create? %>
-<%= link_to 'créer un nouveau plat',  new_user_meal_path(current_user)%>
-<%= link_to 'update le plat',  edit_user_meal_path(meal, current_user) %>
-<% end %>
-<% end%>
-
-
-
 <div class="row">
   <div class="col-xs-6 col-xs-offset-3">
     <% @daily_meals.each do |meal| %>
-      <%= render "meal_row", meal: meal, order_line: @order_line %>
+    <% if policy(meal).create? %>
+      <%= link_to 'créer un nouveau plat',  new_user_meal_path(current_user)%>
+      <%= link_to 'update le plat',  edit_user_meal_path(meal, current_user) %>
     <% end %>
+    <%= render "meal_row", meal: meal, order_line: @order_line %>
+    <% end%>
+    </div>
   </div>
-</div>
+
+
+
