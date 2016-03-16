@@ -3,9 +3,6 @@
 <head>
   <title>SoFood</title>
 
-
-
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <%= stylesheet_link_tag    'application', media: 'all' %>
 
   <%= csrf_meta_tags %>
@@ -16,12 +13,6 @@
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
-
-      <% if request.ssl? %>
-        <%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
-      <% else %>
-        <%= javascript_include_tag 'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
-      <% end %>
 
 
 </body>
