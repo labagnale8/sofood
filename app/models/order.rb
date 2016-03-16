@@ -1,8 +1,9 @@
 class Order < ActiveRecord::Base
   belongs_to :user
+  belongs_to :order_status
+
   has_many :order_lines
 
-  validates_presence_of :address_line_1, :zip_code, :city, :country, :first_name, :last_name, :phone_number
 
   before_create :set_order_status
   before_save :update_subtotal

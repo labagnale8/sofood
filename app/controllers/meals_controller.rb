@@ -4,7 +4,8 @@ class MealsController < ApplicationController
 
   def index
     @daily_meals = policy_scope(Meal.where(publication_date: Date.today).limit(4))
-    @order_line = current_order.order_lines.new
+    @order_line = policy_scope(current_order.order_lines.new)
+
   end
 
   def show

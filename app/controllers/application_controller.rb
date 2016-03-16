@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  before_action :authenticate_user!
   helper_method :current_order
 
     def current_order
@@ -10,7 +11,7 @@ class ApplicationController < ActionController::Base
       end
     end
 
-  before_action :authenticate_user!
+
 
 
 
